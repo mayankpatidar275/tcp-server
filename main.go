@@ -15,6 +15,12 @@ func main(){
 		log.Fatal("Error listening: ", err);
 	}
 
-	fmt.Println("Hello world!", listener)
+	// Step 2: Wait for client to connect. 'Accept' is a blocking system call
+	conn, err := listener.Accept();
+	if err!=nil {
+		log.Fatal("Error accepting: ", err);
+	}
+
+	fmt.Println(conn)
 
 }
