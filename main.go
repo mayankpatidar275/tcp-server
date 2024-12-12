@@ -45,7 +45,10 @@ func main(){
 		if err!=nil {
 			log.Fatal("Error accepting: ", err);
 		}
-		do(conn)
+		// do(conn)
+
+		// Step 5: multiple connections parallel
+		go do(conn)
 	}
 
 }
